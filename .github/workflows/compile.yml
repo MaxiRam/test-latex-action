@@ -10,3 +10,6 @@ jobs:
           file: main.tex
           args: -pdf
       - run: '(test -f main.pdf && echo PDF exists) || (echo PDF does not exist && exit 1)'
+      - uses: actions/upload-artifact@v3
+        with:
+          path: main.pdf
