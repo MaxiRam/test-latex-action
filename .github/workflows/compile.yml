@@ -9,4 +9,4 @@ jobs:
         with:
           file: main.tex
           args: -pdf
-      - run: '(test -f test.pdf && echo PDF exists) || (echo PDF does not exist && exit 1)'
+      - run: '(test -f main.pdf && echo PDF exists) || (echo PDF does not exist && exit 1)'
