@@ -12,11 +12,3 @@ jobs:
           file: main.tex
           args: -pdf
       - run: '(test -f main.pdf && echo PDF exists) || (echo PDF does not exist && exit 1)'
-      - name: Copy
-        run: |
-          mkdir out
-          cp ./main.pdf ./out/main.pdf
-      - uses: actions/upload-artifact@v3
-        with:
-          name: PDF
-          path: out/main.pdf
