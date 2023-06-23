@@ -19,4 +19,15 @@ jobs:
       - name: Upload as artifact
         uses: actions/upload-artifact@v3
         with:
+          name: PDF
           path: ./out/main.pdf
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.6.2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          CLEAN: true
+          SINGLE_COMMIT: true
+          FOLDER: out
+          GIT_CONFIG_NAME: MaxiRam
+          GIT_CONFIG_EMAIL: maxiramos9@hotmail.com
